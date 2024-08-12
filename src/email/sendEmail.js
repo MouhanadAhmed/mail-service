@@ -65,7 +65,7 @@ app.post('/insideout/send-email', (req, res) => {
     // send mail with defined transport object
      transporter.sendMail({
       from: '"inside out mail service " <clinic.insideout@gmail.com>', // sender address
-      to: 'clinic.insideout@gmail.com', // list of receivers
+      to: 'Drwaelyahia@yahoo.com', // list of receivers
       subject: "New Lead", // Subject line
     //   text: "Hello world?", // plain text body
       html:insideOutEmailTemplate({country,name,phone,service}), // html body
