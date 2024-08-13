@@ -51,12 +51,12 @@ app.post('/insideout/send-email', (req, res) => {
   const { name,  country,phone,service } = req.body;
 
 
-    const transporter = createTransport({
+  const transporter = createTransport({
     service: 'gmail',
     auth: {
       // TODO: replace `user` and `pass` values from <https://forwardemail.net>
-      user: "clinic.insideout@gmail.com",
-      pass: "lrymuyxusmudcrec"
+      user: 'serverinmarketing@gmail.com',
+      pass: 'qjmwzmlklqcmzfdw'
     }
   });
 
@@ -64,7 +64,7 @@ app.post('/insideout/send-email', (req, res) => {
 
     // send mail with defined transport object
      transporter.sendMail({
-      from: '"inside out mail service " <clinic.insideout@gmail.com>', // sender address
+      from: '"IN Marketing mail service 👻" <serverinmarketing@gmail.com>', // sender address
       to: 'Drwaelyahia@yahoo.com', // list of receivers
       subject: "New Lead", // Subject line
     //   text: "Hello world?", // plain text body
