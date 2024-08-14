@@ -81,23 +81,23 @@ app.post('/insideout/send-email', (req, res) => {
     //
   
   
-    fetch('https://sheetdb.io/api/v1/keiu5kxwag7fn', {
-      method: 'POST',
-      headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-          data: [
-             {
-              name:name,
-              phone:phone,
-              country:country,
-              service:service
-             }
-          ]
-      })
-  })
+  //   fetch('https://sheetdb.io/api/v1/keiu5kxwag7fn', {
+  //     method: 'POST',
+  //     headers: {
+  //         'Accept': 'application/json',
+  //         'Content-Type': 'application/json'
+  //     },
+  //     body: JSON.stringify({
+  //         data: [
+  //            {
+  //             name:name,
+  //             phone:phone,
+  //             country:country,
+  //             service:service
+  //            }
+  //         ]
+  //     })
+  // })
     res.json({message:"success"})
 });
 
