@@ -100,7 +100,26 @@ app.post('/insideout/send-email', (req, res) => {
   // })
     res.json({message:"success"})
 });
+app.post('/verify-recaptcha', async (req, res) => {
+  const secretKey = '6Lc-fS4qAAAAACyESUniYE28omEZOK5YuhMHDrm-';
+  const token = req.body.token;
 
+  const response = await fetch(`https://www.google.com/recaptcha/api/siteverify`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    body: `secret=${secretKey}&response=${token}`,
+  });
+
+  const data = await response.json();
+  console.log("data",data)
+  if (data.success) {
+      res.json({ score: data.score });
+    } else {
+      res.status(400).json({ error: 'reCAPTCHA verification failed' });
+    }
+});
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
